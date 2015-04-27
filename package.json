@@ -1,0 +1,23 @@
+{
+  "name": "ble-swarm",
+  "version": "0.0.0",
+  "description": "Experimental swarm over bluetooth low energy",
+  "main": "index.js",
+  "dependencies": {
+    "bleno": "^0.1.12",
+    "duplexify": "^3.3.0",
+    "noble": "^0.3.14",
+    "through2": "^0.6.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/ble-swarm.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/ble-swarm/issues"
+  },
+  "homepage": "https://github.com/mafintosh/ble-swarm"
+}
