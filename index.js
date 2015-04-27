@@ -60,6 +60,8 @@ module.exports = function (opts, onpeer) {
   var nounce = crypto.randomBytes(16).toString('hex')
   var that = new events.EventEmitter()
 
+  that.peers = []
+
   var forwardData = function (stream, id, port) {
     var write = function (data, cb) {
       var loop = function () {
@@ -194,7 +196,7 @@ module.exports = function (opts, onpeer) {
 
       ch.write(buf, true, function () {
         forwardData(writable, uuid, remotePort)
-        onstream(duplexify(writable, readable), remoteId)
+        onstream(duplexify(writable, readable), uuid)
       })
     })
   }
