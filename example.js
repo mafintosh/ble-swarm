@@ -1,7 +1,13 @@
 var swarm = require('./')
 var sw = swarm()
 
+console.log('i am peer-' + process.pid)
+
 sw.on('peer', function (stream) {
   console.log('new connection!')
-  process.stdin.pipe(stream).pipe(process.stdout)
+  var i = 0
+  setInterval(function () {
+    stream.write('i am peer-' + process.pid + ' #' + (++i))
+  }, 500)
+  stream.pipe(process.stdout)
 })
