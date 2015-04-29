@@ -7,7 +7,7 @@ sw.on('peer', function (stream) {
   console.log('new connection!')
   var i = 0
   setInterval(function () {
-    stream.write('i am peer-' + process.pid + ' #' + (++i))
+    stream.write('i am peer-' + process.pid + ' #' + (++i) + '\n')
   }, 500)
   stream.pipe(process.stdout)
 })
