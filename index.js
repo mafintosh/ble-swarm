@@ -60,6 +60,8 @@ module.exports = function (opts, onpeer) {
   var nounce = crypto.randomBytes(16).toString('hex')
   var that = new events.EventEmitter()
 
+  if (onpeer) that.on('peer', onpeer)
+
   that.peers = []
 
   var forwardData = function (stream, id, port) {
