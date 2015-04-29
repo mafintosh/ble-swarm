@@ -1,6 +1,6 @@
 {
   "name": "ble-swarm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Experimental swarm over bluetooth low energy",
   "main": "index.js",
   "dependencies": {
