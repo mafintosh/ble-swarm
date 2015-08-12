@@ -5,6 +5,7 @@ var crypto = require('crypto')
 var through = require('through2')
 var duplexify = require('duplexify')
 var events = require('events')
+var debug = require('debug')('ble-swarm')
 
 var noop = function () {}
 
@@ -151,6 +152,7 @@ module.exports = function (opts, onpeer) {
   })
 
   noble.on('stateChange', function (state) {
+    debug('stateChange', state)
     if (state === 'poweredOn') {
       noble.startScanning([uuid], false)
     } else {
@@ -204,12 +206,15 @@ module.exports = function (opts, onpeer) {
   }
 
   noble.on('discover', function (peripheral) {
+    debug('discovered peripheral', peripheral)
     peripheral.connect(function (err) {
       if (err) throw err
       peripheral.discoverServices([uuid], function (err, services) {
         if (err) throw err
+        debug('discovered services for ' + uuid, services)
         services[0].discoverCharacteristics([], function (err, characteristics) {
           if (err) throw err
+          debug('discovered characteristics for services[0]', characteristics)
           ondiscover(characteristics[0])
         })
       })

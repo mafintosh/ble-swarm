@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bleno": "^0.2.0",
+    "debug": "^2.2.0",
     "duplexify": "^3.3.0",
     "noble": "^1.0.2",
     "through2": "^0.6.5"
