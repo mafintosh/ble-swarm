@@ -4,9 +4,9 @@
   "description": "Experimental swarm over bluetooth low energy",
   "main": "index.js",
   "dependencies": {
-    "bleno": "^0.1.12",
+    "bleno": "^0.2.0",
     "duplexify": "^3.3.0",
-    "noble": "^0.3.14",
+    "noble": "^1.0.2",
     "through2": "^0.6.5"
   },
   "devDependencies": {},
